@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: haroon415/python:backend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000  # Assuming your app runs on port 5000
+        env:
+        - name: DB_HOST
+          value: "db-service"

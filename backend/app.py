@@ -13,7 +13,7 @@ app.secret_key = 'devops-exam-secret-key'  # Use hardcoded value for now
 # ✅ Database connection using your local MariaDB setup
 def get_db_connection():
     return mysql.connector.connect(
-        host='localhost',
+        host='db-service',
         user='flaskuser',
         password='flaskpass',
         database='devops_exam'
