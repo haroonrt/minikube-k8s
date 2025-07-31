@@ -14,8 +14,8 @@ app.secret_key = 'devops-exam-secret-key'  # Use hardcoded value for now
 def get_db_connection():
     return mysql.connector.connect(
         host='db-service',
-        user='flaskuser',
-        password='flaskpass',
+        user='root',
+        password='password',
         database='devops_exam'
     )
 
